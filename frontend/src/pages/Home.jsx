@@ -1,121 +1,93 @@
-import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 import {
   Dumbbell,
   Brain,
-  Salad,
+  Activity,
   LineChart,
 } from "lucide-react";
 
-import FeatureCard from "../components/FeatureCard";
-
-function Home() {
+ function Home() {
   return (
-    <div className="relative bg-black text-white overflow-hidden">
-
-      {/* Grid Background */}
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-          bg-[size:60px_60px]
-        "
-      />
-
-      {/* Glow */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/10 blur-[120px]" />
+    <div className="bg-[#050816] text-white">
 
       {/* HERO */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-36">
+      <section
+        className="relative h-screen flex items-center justify-center overflow-hidden"
+      >
+        {/* Background Image */}
+        <img
+          src="https://png.pngtree.com/thumb_back/fh260/background/20241007/pngtree-gym-motivation-bold-typography-and-fitness-icons-inspire-in-the-image_16284008.jpg"
+          alt="gym"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-        <div className="max-w-6xl mx-auto text-center">
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="
-              uppercase
-              tracking-[0.3em]
-              text-cyan-400
-              font-semibold
-              mb-6
-              text-sm
-            "
-          >
-            AI Powered Fitness Revolution
-          </motion.p>
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto text-center px-6">
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="
-              text-5xl
-              md:text-7xl
-              lg:text-8xl
-              font-black
-              leading-tight
-            "
-          >
-            Transform Your Body
+          <p className="uppercase tracking-[8px] text-cyan-400 text-sm mb-6">
+            AI Powered Fitness Platform
+          </p>
+
+          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-8">
+            Train Smarter
             <br />
+            With AI
+          </h1>
 
-            <span className="text-cyan-400">
-              With AI Power
-            </span>
-          </motion.h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            Personalized workouts, nutrition planning,
+            body analysis and progress tracking powered
+            by artificial intelligence.
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="
-              text-slate-400
-              text-lg
-              md:text-xl
-              max-w-3xl
-              mx-auto
-              mt-8
-              leading-relaxed
-            "
-          >
-            Personalized workout plans, smart nutrition tracking,
-            body analysis, and AI-driven fitness recommendations
-            — all in one powerful platform.
-          </motion.p>
+          <div className="flex justify-center gap-5 flex-wrap">
 
-          {/* Buttons */}
-          <div className="flex justify-center gap-5 mt-10 flex-wrap">
-
-            <button
-              className="
-                bg-cyan-400
-                text-black
-                px-7 py-3
-                rounded-full
-                font-bold
-                hover:scale-105
-                transition
-              "
-            >
-              Get Started
+            <button className="px-8 py-4 rounded-full bg-cyan-400 text-black font-bold text-lg hover:scale-105 transition">
+              Start Free
             </button>
 
-            <button
-              className="
-                border border-white/20
-                px-7 py-3
-                rounded-full
-                font-semibold
-                hover:border-cyan-400
-                hover:text-cyan-400
-                transition
-              "
-            >
-              Explore Features
+            <button className="px-8 py-4 rounded-full border border-white/30 hover:bg-white/10 transition text-lg">
+              Watch Demo
             </button>
 
+          </div>
+
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="py-24 px-6">
+
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+
+          <div>
+            <h2 className="text-5xl font-black text-cyan-400">
+              10K+
+            </h2>
+            <p className="text-gray-400 mt-3">
+              Active Users
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-5xl font-black text-cyan-400">
+              95%
+            </h2>
+            <p className="text-gray-400 mt-3">
+              Goal Success Rate
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-5xl font-black text-cyan-400">
+              500K+
+            </h2>
+            <p className="text-gray-400 mt-3">
+              Workouts Generated
+            </p>
           </div>
 
         </div>
@@ -123,59 +95,94 @@ function Home() {
       </section>
 
       {/* FEATURES */}
-      <section className="relative z-10 py-24 px-6">
+      <section className="py-24 px-6">
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="text-center mb-16">
+          <h2 className="text-5xl font-black text-center mb-16">
+            Everything You Need
+          </h2>
 
-            <p className="uppercase tracking-[0.3em] text-cyan-400 text-sm font-semibold mb-4">
-              FEATURES
-            </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-            <h2 className="text-4xl md:text-6xl font-black mb-6">
-              Everything You Need
-            </h2>
+            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
+              <h3 className="text-2xl font-bold mb-4">
+                AI Workouts
+              </h3>
+              <p className="text-gray-400">
+                Adaptive workout plans tailored to your goals.
+              </p>
+            </div>
 
-            <p className="text-slate-400 text-lg max-w-3xl mx-auto">
-              AI-powered tools designed to transform your fitness
-              journey with intelligent recommendations and analytics.
-            </p>
+            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
+              <h3 className="text-2xl font-bold mb-4">
+                Nutrition
+              </h3>
+              <p className="text-gray-400">
+                Smart meal planning and macro tracking.
+              </p>
+            </div>
 
-          </div>
+            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
+              <h3 className="text-2xl font-bold mb-4">
+                Body Analysis
+              </h3>
+              <p className="text-gray-400">
+                AI-powered body composition insights.
+              </p>
+            </div>
 
-          {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-            <FeatureCard
-              icon={<Dumbbell size={34} />}
-              title="AI Workouts"
-              description="Adaptive workout plans generated specifically for your body type and goals."
-            />
-
-            <FeatureCard
-              icon={<Salad size={34} />}
-              title="Smart Nutrition"
-              description="Personalized meal planning with macro tracking and AI nutrition insights."
-            />
-
-            <FeatureCard
-              icon={<Brain size={34} />}
-              title="Body Analysis"
-              description="Advanced body analysis powered by AI-driven metrics and visual intelligence."
-            />
-
-            <FeatureCard
-              icon={<LineChart size={34} />}
-              title="Progress Tracking"
-              description="Track performance, body changes, and milestones in real time."
-            />
+            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
+              <h3 className="text-2xl font-bold mb-4">
+                Progress Tracking
+              </h3>
+              <p className="text-gray-400">
+                Monitor growth with advanced analytics.
+              </p>
+            </div>
 
           </div>
 
         </div>
 
       </section>
+      <section className="py-40 px-6">
+
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+    <div>
+      <img
+        src="https://st2.depositphotos.com/1100414/7469/i/450/depositphotos_74696339-Silhouette-of-a-strong-fighter.jpg"
+        alt=""
+        className="rounded-3xl"
+      />
+    </div>
+
+    <div>
+
+      <p className="text-cyan-400 uppercase tracking-[5px] mb-4">
+        AI Body Analysis
+      </p>
+
+      <h2 className="text-5xl font-black mb-6">
+        Your Personal Fitness Coach
+      </h2>
+
+      <p className="text-gray-400 text-lg leading-8 mb-8">
+        Upload progress photos, track body composition,
+        receive workout recommendations and get AI-powered
+        insights tailored to your goals.
+      </p>
+
+      <button className="bg-cyan-400 text-black px-8 py-4 rounded-full font-bold">
+        Learn More
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
     </div>
   );
