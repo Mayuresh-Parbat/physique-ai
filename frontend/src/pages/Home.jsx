@@ -58,94 +58,8 @@ import {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="py-24 px-6">
-
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-
-          <div>
-            <h2 className="text-5xl font-black text-cyan-400">
-              10K+
-            </h2>
-            <p className="text-gray-400 mt-3">
-              Active Users
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-5xl font-black text-cyan-400">
-              95%
-            </h2>
-            <p className="text-gray-400 mt-3">
-              Goal Success Rate
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-5xl font-black text-cyan-400">
-              500K+
-            </h2>
-            <p className="text-gray-400 mt-3">
-              Workouts Generated
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-24 px-6">
-
-        <div className="max-w-7xl mx-auto">
-
-          <h2 className="text-5xl font-black text-center mb-16">
-            Everything You Need
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
-              <h3 className="text-2xl font-bold mb-4">
-                AI Workouts
-              </h3>
-              <p className="text-gray-400">
-                Adaptive workout plans tailored to your goals.
-              </p>
-            </div>
-
-            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
-              <h3 className="text-2xl font-bold mb-4">
-                Nutrition
-              </h3>
-              <p className="text-gray-400">
-                Smart meal planning and macro tracking.
-              </p>
-            </div>
-
-            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
-              <h3 className="text-2xl font-bold mb-4">
-                Body Analysis
-              </h3>
-              <p className="text-gray-400">
-                AI-powered body composition insights.
-              </p>
-            </div>
-
-            <div className="bg-[#0d1328] p-8 rounded-3xl hover:-translate-y-2 transition">
-              <h3 className="text-2xl font-bold mb-4">
-                Progress Tracking
-              </h3>
-              <p className="text-gray-400">
-                Monitor growth with advanced analytics.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
+      
+      
       <section className="py-40 px-6">
 
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
@@ -154,7 +68,7 @@ import {
       <img
         src="https://st2.depositphotos.com/1100414/7469/i/450/depositphotos_74696339-Silhouette-of-a-strong-fighter.jpg"
         alt=""
-        className="rounded-3xl"
+        className="rounded-3xl shadow-2xl border border-white/10"
       />
     </div>
 
@@ -177,6 +91,92 @@ import {
       <button className="bg-cyan-400 text-black px-8 py-4 rounded-full font-bold">
         Learn More
       </button>
+
+    </div>
+
+  </div>
+
+</section>
+<section className="py-32 bg-black">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center mb-20">
+
+      <p className="text-cyan-400 uppercase tracking-[8px] mb-4">
+        Success Stories
+      </p>
+
+      <h2 className="text-6xl font-black mb-6">
+        Real Transformations
+      </h2>
+
+      <p className="text-gray-400 text-xl">
+        Thousands of users are changing their bodies using Physique AI.
+      </p>
+
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      <img
+        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"
+        className="rounded-3xl h-[450px] w-full object-cover"
+      />
+
+      <img
+        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        className="rounded-3xl h-[450px] w-full object-cover"
+      />
+
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/068/909/594/small/powerful-back-workout-intense-fitness-training-gym-free-photo.jpg"
+        className="rounded-3xl h-[450px] w-full object-cover"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section className="py-32 bg-[#050816]">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <img
+          src="https://img.freepik.com/premium-photo/fitness-fusion-diverse-group-achieving-their-workout-goals-together_1124573-40731.jpg"
+          alt=""
+          className="rounded-3xl w-full"
+        />
+      </div>
+
+      <div>
+
+        <p className="text-cyan-400 uppercase tracking-[8px] mb-4">
+          AI WORKOUT GENERATION
+        </p>
+
+        <h2 className="text-6xl font-black mb-6">
+          Workouts Built
+          For Your Body
+        </h2>
+
+        <p className="text-gray-400 text-xl leading-relaxed mb-8">
+          Physique AI creates custom training programs
+          based on your body type, goals, recovery,
+          and fitness level.
+        </p>
+
+        <button className="bg-cyan-400 text-black px-8 py-4 rounded-full font-bold">
+          Explore Workouts
+        </button>
+
+      </div>
 
     </div>
 
