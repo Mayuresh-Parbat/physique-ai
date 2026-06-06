@@ -45,6 +45,15 @@ function Navbar() {
           >
             Get Started
           </Link>
+          <Link to="/body-analysis">
+  Body Analysis
+</Link>
+<Link
+  to="/dashboard"
+  className="hover:text-cyan-400 transition duration-300"
+>
+  Dashboard
+</Link>
 
         </div>
 
