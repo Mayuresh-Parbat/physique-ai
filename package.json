@@ -1,6 +1,35 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "framer-motion": "^12.40.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3",
     "react-router-dom": "^7.17.0"
+  },
+  "name": "physique-ai",
+  "version": "1.0.0",
+  "description": "Physique AI is an intelligent fitness and nutrition assistant that leverages Artificial Intelligence to analyze user body metrics and provide personalized diet and workout recommendations. The system combines computer vision, data analytics, and smart planning to help users achieve their fitness goals efficiently.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayuresh-Parbat/physique-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mayuresh-Parbat/physique-ai/issues"
+  },
+  "homepage": "https://github.com/Mayuresh-Parbat/physique-ai#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
+  
 }

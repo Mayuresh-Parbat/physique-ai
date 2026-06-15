@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -9,17 +10,47 @@ import BodyAnalysis from "./pages/BodyAnalysis";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <Routes>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/body-analysis" element={<BodyAnalysis />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </>
+      {/* PUBLIC PAGES */}
+
+      <Route
+        path="/"
+        element={
+          <>
+            <Navbar />
+            <Home />
+          </>
+        }
+      />
+
+      <Route
+        path="/login"
+        element={
+          <>
+            <Navbar />
+            <Login />
+          </>
+        }
+      />
+
+      <Route
+        path="/register"
+        element={
+          <>
+            <Navbar />
+            <Register />
+          </>
+        }
+      />
+
+      {/* DASHBOARD PAGES */}
+
+      <Route path="/dashboard" element={<Dashboard />} />
+
+      <Route path="/body-analysis" element={<BodyAnalysis />} />
+
+    </Routes>
   );
 }
 
