@@ -120,12 +120,12 @@ import {
     <div className="grid md:grid-cols-3 gap-8">
 
       <img
-        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"
+        src="https://wallpapersok.com/images/thumbnail/bodybuilder-hd-portrait-opeeltvl9d0myv88.webp"
         className="rounded-3xl h-[450px] w-full object-cover"
       />
 
       <img
-        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        src="https://t3.ftcdn.net/jpg/01/81/47/44/360_F_181474444_JbhL0CGIYe49eV8S6XyHCOVtHaaceKIn.jpg"
         className="rounded-3xl h-[450px] w-full object-cover"
       />
 
