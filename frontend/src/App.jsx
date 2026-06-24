@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import DietPlan from "./pages/DietPlan";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -33,7 +34,10 @@ function App() {
           </>
         }
       />
-
+<Route
+  path="/diet-plan"
+  element={<DietPlan />}
+/>
       <Route
         path="/register"
         element={

@@ -36,6 +36,13 @@ function Navbar() {
             to="/dashboard"
             className="text-slate-300 hover:text-cyan-400 transition"
           >
+
+           <Link
+  to="/diet-plan"
+  className="hover:text-cyan-400"
+>
+  Diet Plan
+</Link> 
             Dashboard
           </Link>
 
