@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import WorkoutTracker from "./pages/WorkoutTracker";
 import DietPlan from "./pages/DietPlan";
 
 import Home from "./pages/Home";
@@ -24,7 +25,10 @@ function App() {
           </>
         }
       />
-
+<Route
+  path="/workout-tracker"
+  element={<WorkoutTracker />}
+/>
       <Route
         path="/login"
         element={

@@ -32,6 +32,13 @@ function Navbar() {
             Body Analysis
           </Link>
 
+<Link
+  to="/workout-tracker"
+  className="hover:text-cyan-400 transition duration-300"
+>
+  Workout Tracker
+</Link>
+
           <Link
             to="/dashboard"
             className="text-slate-300 hover:text-cyan-400 transition"
@@ -42,7 +49,7 @@ function Navbar() {
   className="hover:text-cyan-400"
 >
   Diet Plan
-</Link> 
+</Link>~ 
             Dashboard
           </Link>
 
