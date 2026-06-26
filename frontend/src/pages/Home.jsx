@@ -31,7 +31,7 @@ import {
             AI Powered Fitness Platform
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-8">
+          <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-8">
             Train Smarter
             <br />
             With AI

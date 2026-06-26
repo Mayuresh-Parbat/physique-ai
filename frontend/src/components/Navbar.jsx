@@ -16,56 +16,34 @@ function Navbar() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-8 text-sm font-medium">
+        <div className="flex gap-8">
 
-          <Link
-            to="/"
-            className="text-slate-300 hover:text-cyan-400 transition"
-          >
-            Home
-          </Link>
+  <Link to="/">Home</Link>
 
-          <Link
-            to="/body-analysis"
-            className="text-slate-300 hover:text-cyan-400 transition"
-          >
-            Body Analysis
-          </Link>
+  <Link to="/body-analysis">
+    Body Analysis
+  </Link>
 
-<Link
-  to="/workout-tracker"
-  className="hover:text-cyan-400 transition duration-300"
->
-  Workout Tracker
-</Link>
+  <Link to="/workout-tracker">
+    Workout Tracker
+  </Link>
 
-          <Link
-            to="/dashboard"
-            className="text-slate-300 hover:text-cyan-400 transition"
-          >
+  <Link to="/diet-plan">
+    Diet Plan
+  </Link>
 
-           <Link
-  to="/diet-plan"
-  className="hover:text-cyan-400"
->
-  Diet Plan
-</Link>~ 
-            Dashboard
-          </Link>
+  <Link to="/workout-plan">
+    Workout Plan
+  </Link>
 
-          <Link
-            to="/login"
-            className="text-slate-300 hover:text-cyan-400 transition"
-          >
-<Link
-  to="/workout-plan"
-  className="text-slate-300 hover:text-cyan-400 transition"
->
-  Workout Plan
-</Link>
+  <Link to="/dashboard">
+    Dashboard
+  </Link>
 
-            Login
-          </Link>
+  <Link to="/login">
+    Login
+  </Link>
+
 
           <Link
             to="/register"
