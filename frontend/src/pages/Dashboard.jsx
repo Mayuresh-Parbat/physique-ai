@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 import CircularProgress from "../components/ui/CircularProgress";
-import ProgressChart from "../components/ui/ProgressChart";
+import ProgressChart from "../components/UI/Progresscard";
 import ActivityFeed from "../components/ui/ActivityFeed";
 import AIInsights from "../components/ui/AIInsights";
 
@@ -65,30 +65,8 @@ function Dashboard() {
 
       {/* BODY SCORE */}
 
-      <div className="grid lg:grid-cols-3 gap-6 mb-8">
-
-        <div className="bg-slate-900 rounded-3xl p-8">
-          <CircularProgress
-            value={87}
-            label="Fitness Score"
-          />
-        </div>
-
-        <div className="bg-slate-900 rounded-3xl p-8">
-          <CircularProgress
-            value={74}
-            label="Recovery"
-          />
-        </div>
-
-        <div className="bg-slate-900 rounded-3xl p-8">
-          <CircularProgress
-            value={91}
-            label="Consistency"
-          />
-        </div>
-
-      </div>
+  
+    
 
       {/* CHART + AI */}
 
@@ -138,6 +116,57 @@ function Dashboard() {
   );
 }
 
+
+function AIReadinessCard() {
+  return (
+    <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-3xl p-6 backdrop-blur-xl">
+
+      <div className="flex justify-between items-center mb-4">
+
+        <div>
+          <p className="text-slate-400 text-sm">
+            AI Readiness Score
+          </p>
+
+          <h2 className="text-4xl font-bold mt-2">
+            92
+          </h2>
+        </div>
+
+        <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl">
+          🧠
+        </div>
+
+      </div>
+
+      <div className="mb-4">
+        <div className="flex justify-between text-sm mb-2">
+          <span>Goal Progress</span>
+          <span>92%</span>
+        </div>
+
+        <div className="h-2 bg-slate-800 rounded-full">
+          <div
+            className="h-2 bg-cyan-400 rounded-full"
+            style={{ width: "92%" }}
+          />
+        </div>
+      </div>
+
+      <p className="text-slate-300 text-sm">
+        Your consistency, nutrition and recovery metrics
+        indicate excellent progress toward your fitness goals.
+      </p>
+
+    </div>
+  );
+}
+
+
+
+
+
+
 function StatCard({
   icon,
   title,
@@ -170,6 +199,40 @@ function StatCard({
       <h2 className="text-4xl font-bold">
         {value}
       </h2>
+    </div>
+  );
+}
+
+function ProgressCard({
+  title,
+  value,
+}) {
+  return (
+    <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
+
+      <div className="flex justify-between mb-4">
+
+        <p className="text-slate-400">
+          {title}
+        </p>
+
+        <p className="font-bold">
+          {value}%
+        </p>
+
+      </div>
+
+      <div className="h-3 bg-slate-800 rounded-full">
+
+        <div
+          className="h-3 rounded-full bg-cyan-400"
+          style={{
+            width: `${value}%`,
+          }}
+        />
+
+      </div>
+
     </div>
   );
 }
