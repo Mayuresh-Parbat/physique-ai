@@ -36,6 +36,13 @@ function Navbar() {
     Workout Plan
   </Link>
 
+<Link
+  to="/challenges"
+  className="text-slate-300 hover:text-cyan-400 transition"
+>
+  Challenges
+</Link>
+
   <Link to="/dashboard">
     Dashboard
   </Link>
@@ -60,6 +67,8 @@ function Navbar() {
           >
             Get Started
           </Link>
+
+
 
         </div>
 

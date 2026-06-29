@@ -5,11 +5,7 @@ function DashboardLayout({ children }) {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-      <Navbar />
-
-      <Sidebar />
-
-      <main className="ml-64 pt-24 p-8">
+      <main className="max-w-7xl mx-auto pt-28 px-6">
         {children}
       </main>
 

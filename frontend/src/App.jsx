@@ -3,9 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import WorkoutTracker from "./pages/WorkoutTracker";
 import DietPlan from "./pages/DietPlan";
-
+import WorkoutPlan from "./pages/WorkoutPlan";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Challenges from "./pages/Challenges";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import BodyAnalysis from "./pages/BodyAnalysis";
@@ -29,6 +30,10 @@ function App() {
   path="/workout-tracker"
   element={<WorkoutTracker />}
 />
+<Route
+  path="/workout-plan"
+  element={<WorkoutPlan />}
+/>
       <Route
         path="/login"
         element={
@@ -51,6 +56,14 @@ function App() {
           </>
         }
       />
+
+
+
+<Route
+  path="/challenges"
+  element={<Challenges />}
+/>
+
 
       {/* DASHBOARD PAGES */}
 

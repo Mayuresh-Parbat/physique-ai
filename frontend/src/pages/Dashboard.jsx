@@ -1,114 +1,225 @@
 import DashboardLayout from "../layouts/DashboardLayout";
 import {
-  Bell,
   Brain,
   Flame,
-  Footprints,
+  Activity,
+  Droplets,
+  Dumbbell,
+  TrendingUp,
   Moon,
   Trophy,
 } from "lucide-react";
-
-import CircularProgress from "../components/ui/CircularProgress";
-import ProgressChart from "../components/UI/Progresscard";
-import ActivityFeed from "../components/ui/ActivityFeed";
-import AIInsights from "../components/ui/AIInsights";
 
 function Dashboard() {
   return (
     <DashboardLayout>
       {/* HEADER */}
 
-      <div className="flex justify-between items-center mb-10">
+      <div className="mb-10">
+        <p className="text-cyan-400 uppercase tracking-[4px] text-sm mb-3">
+          Physique AI Dashboard
+        </p>
 
-        <div>
-          <h1 className="text-4xl font-bold">
-            Welcome Back, Mayuresh 👋
-          </h1>
+        <h1 className="text-5xl font-bold mb-2">
+          Welcome back, Mayuresh 👋
+        </h1>
 
-          <p className="text-slate-400 mt-2">
-            Your fitness journey is improving.
-          </p>
-        </div>
-
-        <Bell className="text-slate-400" />
+        <p className="text-slate-400 text-lg">
+          Your AI-powered fitness insights for today.
+        </p>
       </div>
 
-      {/* TOP STATS */}
+      {/* TOP CARDS */}
 
-      <div className="grid lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-8">
 
         <StatCard
-          icon={<Flame />}
+          title="Weight"
+          value="76 kg"
+          icon={<Activity size={22} />}
+          change="-1.2kg"
+        />
+
+        <StatCard
+          title="Body Fat"
+          value="18%"
+          icon={<TrendingUp size={22} />}
+          change="-2%"
+        />
+
+        <StatCard
           title="Calories"
           value="2350"
+          icon={<Flame size={22} />}
+          change="+220"
         />
 
         <StatCard
-          icon={<Footprints />}
-          title="Steps"
-          value="9,245"
-        />
-
-        <StatCard
-          icon={<Moon />}
-          title="Sleep"
-          value="7.8h"
-        />
-
-        <StatCard
-          icon={<Trophy />}
-          title="Streak"
-          value="18 Days"
+          title="AI Score"
+          value="87"
+          icon={<Brain size={22} />}
+          change="+8%"
         />
 
       </div>
 
-      {/* BODY SCORE */}
-
-  
-    
-
-      {/* CHART + AI */}
+      {/* MAIN SECTION */}
 
       <div className="grid lg:grid-cols-3 gap-6 mb-8">
 
-        <div className="lg:col-span-2 bg-slate-900 rounded-3xl p-6">
+        {/* CHART */}
 
-          <h2 className="text-2xl font-bold mb-6">
-            Weight Progress
-          </h2>
+        <div className="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-3xl p-8">
 
-          <ProgressChart />
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-2xl font-bold">
+              Weekly Progress
+            </h2>
+
+            <span className="text-cyan-400">
+              Last 7 Days
+            </span>
+          </div>
+
+          <div className="h-80 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center">
+            <p className="text-slate-500 text-lg">
+              Chart Integration Here
+            </p>
+          </div>
 
         </div>
 
-        <div className="bg-slate-900 rounded-3xl p-6">
+        {/* AI COACH */}
 
-          <div className="flex gap-3 items-center mb-6">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8">
 
+          <div className="flex items-center gap-3 mb-8">
             <Brain className="text-cyan-400" />
-
             <h2 className="text-2xl font-bold">
               AI Coach
             </h2>
-
           </div>
 
-          <AIInsights />
+          <div className="space-y-4">
+
+            <Tip
+              icon="🥩"
+              text="Protein intake is 18g below target"
+            />
+
+            <Tip
+              icon="💪"
+              text="Strength increased by 6%"
+            />
+
+            <Tip
+              icon="😴"
+              text="Recovery score is excellent"
+            />
+
+            <Tip
+              icon="🔥"
+              text="Calorie burn exceeded goal"
+            />
+
+          </div>
 
         </div>
 
       </div>
 
-      {/* RECENT ACTIVITY */}
+      {/* PROGRESS */}
 
-      <div className="bg-slate-900 rounded-3xl p-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-8">
 
-        <h2 className="text-2xl font-bold mb-6">
-          Recent Activity
-        </h2>
+        <ProgressCard
+          title="Water Intake"
+          value={75}
+          amount="3 / 4 L"
+          icon={<Droplets />}
+        />
 
-        <ActivityFeed />
+        <ProgressCard
+          title="Protein Goal"
+          value={82}
+          amount="152 g"
+          icon={<Flame />}
+        />
+
+        <ProgressCard
+          title="Sleep"
+          value={91}
+          amount="7.8 hrs"
+          icon={<Moon />}
+        />
+
+        <ProgressCard
+          title="Streak"
+          value={100}
+          amount="18 Days"
+          icon={<Trophy />}
+        />
+
+      </div>
+
+      {/* WORKOUT + ACTIVITY */}
+
+      <div className="grid lg:grid-cols-2 gap-6">
+
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <div className="flex items-center gap-3 mb-6">
+            <Dumbbell className="text-cyan-400" />
+            <h2 className="text-2xl font-bold">
+              Today's Workout
+            </h2>
+          </div>
+
+          <h3 className="text-3xl font-bold mb-3">
+            Chest + Triceps
+          </h3>
+
+          <p className="text-slate-400 mb-6">
+            Estimated duration: 75 minutes
+          </p>
+
+          <button className="bg-cyan-500 hover:bg-cyan-400 transition px-6 py-3 rounded-xl text-black font-bold">
+            Start Workout
+          </button>
+
+        </div>
+
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+          <h2 className="text-2xl font-bold mb-6">
+            Recent Activity
+          </h2>
+
+          <div className="space-y-5">
+
+            <ActivityItem
+              title="Chest Workout Completed"
+              time="2 hours ago"
+            />
+
+            <ActivityItem
+              title="Hit Protein Goal"
+              time="Today"
+            />
+
+            <ActivityItem
+              title="Walked 9,000 Steps"
+              time="Morning"
+            />
+
+            <ActivityItem
+              title="Body Fat Reduced"
+              time="This Week"
+            />
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -116,121 +227,100 @@ function Dashboard() {
   );
 }
 
+/* COMPONENTS */
 
-function AIReadinessCard() {
+function StatCard({ title, value, icon, change }) {
   return (
-    <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-3xl p-6 backdrop-blur-xl">
+    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-cyan-500/30 transition">
 
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between mb-5">
+        <p className="text-slate-400">{title}</p>
 
-        <div>
-          <p className="text-slate-400 text-sm">
-            AI Readiness Score
-          </p>
-
-          <h2 className="text-4xl font-bold mt-2">
-            92
-          </h2>
-        </div>
-
-        <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-3xl">
-          🧠
-        </div>
-
-      </div>
-
-      <div className="mb-4">
-        <div className="flex justify-between text-sm mb-2">
-          <span>Goal Progress</span>
-          <span>92%</span>
-        </div>
-
-        <div className="h-2 bg-slate-800 rounded-full">
-          <div
-            className="h-2 bg-cyan-400 rounded-full"
-            style={{ width: "92%" }}
-          />
+        <div className="text-cyan-400">
+          {icon}
         </div>
       </div>
 
-      <p className="text-slate-300 text-sm">
-        Your consistency, nutrition and recovery metrics
-        indicate excellent progress toward your fitness goals.
+      <h2 className="text-4xl font-bold mb-2">
+        {value}
+      </h2>
+
+      <p className="text-green-400 text-sm">
+        {change}
       </p>
 
     </div>
   );
 }
 
-
-
-
-
-
-function StatCard({
-  icon,
+function ProgressCard({
   title,
+  amount,
   value,
+  icon,
 }) {
   return (
-    <div
-      className="
-        bg-slate-900
-        rounded-3xl
-        p-6
-        border
-        border-slate-800
-        hover:border-cyan-500
-        transition
-      "
-    >
-      <div className="flex justify-between mb-5">
+    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+
+      <div className="flex justify-between mb-4">
+
+        <div>
+          <p className="text-slate-400">
+            {title}
+          </p>
+
+          <h3 className="text-2xl font-bold mt-2">
+            {amount}
+          </h3>
+        </div>
 
         <div className="text-cyan-400">
           {icon}
         </div>
-
-        <p className="text-slate-400">
-          {title}
-        </p>
-
-      </div>
-
-      <h2 className="text-4xl font-bold">
-        {value}
-      </h2>
-    </div>
-  );
-}
-
-function ProgressCard({
-  title,
-  value,
-}) {
-  return (
-    <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-
-      <div className="flex justify-between mb-4">
-
-        <p className="text-slate-400">
-          {title}
-        </p>
-
-        <p className="font-bold">
-          {value}%
-        </p>
 
       </div>
 
       <div className="h-3 bg-slate-800 rounded-full">
 
         <div
-          className="h-3 rounded-full bg-cyan-400"
+          className="h-3 bg-cyan-400 rounded-full"
           style={{
             width: `${value}%`,
           }}
         />
 
+      </div>
+
+    </div>
+  );
+}
+
+function Tip({ icon, text }) {
+  return (
+    <div className="bg-slate-800 rounded-2xl p-4 flex gap-3 items-center">
+      <span>{icon}</span>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+function ActivityItem({
+  title,
+  time,
+}) {
+  return (
+    <div className="flex gap-4">
+
+      <div className="w-3 h-3 rounded-full bg-cyan-400 mt-2" />
+
+      <div>
+        <h4 className="font-semibold">
+          {title}
+        </h4>
+
+        <p className="text-slate-400 text-sm">
+          {time}
+        </p>
       </div>
 
     </div>
