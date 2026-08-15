@@ -1,5 +1,15 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import {
+  User,
+  Ruler,
+  Weight,
+  Activity,
+  Brain,
+  Sparkles,
+  ChevronRight,
+  Target,
+} from "lucide-react";
 
 function BodyAnalysis() {
   const [age, setAge] = useState(21);
@@ -17,30 +27,66 @@ function BodyAnalysis() {
   const fatLossCalories = maintenanceCalories - 500;
   const muscleGainCalories = maintenanceCalories + 300;
 
-  const proteinMin = Math.round(weight * 1.6);
-  const proteinOptimal = Math.round(weight * 2);
+  const protein = Math.round(weight * 2);
+  const carbs = Math.round(weight * 4);
+  const fats = Math.round(weight * 0.9);
+  const water = (weight * 0.04).toFixed(1);
+
+  const healthScore =
+    bmi >= 18.5 && bmi <= 24.9 ? 92 : 78;
+
+  const bmiStatus =
+    bmi < 18.5
+      ? "Underweight"
+      : bmi < 25
+      ? "Healthy"
+      : bmi < 30
+      ? "Overweight"
+      : "Obese";
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-40 pb-16">
+      <main className="max-w-7xl mx-auto px-6 pt-36 pb-20">
 
-        {/* HEADER */}
+        {/* HERO */}
 
-        <div className="mb-12">
+        <div className="mb-14">
 
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-4">
-            Physique AI
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/10">
+
+            <Sparkles
+              className="text-cyan-400"
+              size={16}
+            />
+
+            <span className="text-cyan-400 font-semibold text-sm">
+              AI Powered Body Analysis
+            </span>
+
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            Body Analysis
+          <h1 className="text-6xl font-black mt-6 leading-tight">
+
+            Analyze Your Body
+
+            <span className="text-cyan-400">
+              {" "}Like A Professional
+            </span>
+
           </h1>
 
-          <p className="text-slate-400 text-lg max-w-3xl leading-relaxed">
-            Calculate BMI, calorie requirements, protein targets and receive
-            personalized fitness recommendations powered by AI.
+          <p className="text-slate-400 text-lg mt-6 max-w-3xl">
+
+            Get your BMI, calories,
+            protein target,
+            body type,
+            hydration,
+            health score,
+            and AI-powered recommendations.
+
           </p>
 
         </div>
@@ -49,55 +95,79 @@ function BodyAnalysis() {
 
           {/* LEFT PANEL */}
 
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8">
 
-            <h2 className="text-2xl font-semibold mb-6">
-              Body Information
+            <h2 className="text-3xl font-bold mb-8">
+              Personal Information
             </h2>
 
-            <div className="space-y-5">
+            <div className="space-y-6">
 
               <InputField
+                icon={<User size={18} />}
                 label="Age"
                 value={age}
                 setValue={setAge}
               />
 
               <InputField
+                icon={<Ruler size={18} />}
                 label="Height (cm)"
                 value={height}
                 setValue={setHeight}
               />
 
               <InputField
+                icon={<Weight size={18} />}
                 label="Weight (kg)"
                 value={weight}
                 setValue={setWeight}
               />
 
               <div>
-                <label className="block mb-2 text-slate-400">
+
+                <label className="flex items-center gap-2 mb-3">
+
+                  <User
+                    size={18}
+                    className="text-cyan-400"
+                  />
+
                   Gender
+
                 </label>
 
                 <select
                   value={gender}
-                  onChange={(e) => setGender(e.target.value)}
+                  onChange={(e) =>
+                    setGender(e.target.value)
+                  }
                   className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3"
                 >
                   <option>Male</option>
                   <option>Female</option>
                 </select>
+
               </div>
 
               <div>
-                <label className="block mb-2 text-slate-400">
+
+                <label className="flex items-center gap-2 mb-3">
+
+                  <Activity
+                    size={18}
+                    className="text-cyan-400"
+                  />
+
                   Activity Level
+
                 </label>
 
                 <select
                   value={activity}
-                  onChange={(e) => setActivity(e.target.value)}
+                  onChange={(e) =>
+                    setActivity(e.target.value)
+                  }
                   className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3"
                 >
                   <option>Sedentary</option>
@@ -106,22 +176,19 @@ function BodyAnalysis() {
                   <option>Active</option>
                   <option>Very Active</option>
                 </select>
+
               </div>
 
               <button
-                className="
-                  w-full
-                  py-4
-                  rounded-xl
-                  bg-cyan-500
-                  text-black
-                  font-semibold
-                  hover:bg-cyan-400
-                  transition-all
-                  duration-300
-                "
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition"
               >
-                Analyze Body
+
+                <Brain size={20} />
+
+                Generate AI Report
+
+                <ChevronRight size={18} />
+
               </button>
 
             </div>
@@ -132,122 +199,141 @@ function BodyAnalysis() {
 
           <div className="space-y-6">
 
-            {/* FITNESS SCORE */}
+            <div className="rounded-3xl bg-gradient-to-r from-cyan-500 to-blue-600 p-8">
 
-            <div className="bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 rounded-3xl p-8 shadow-2xl">
-
-              <p className="text-sm opacity-90">
-                Overall Fitness Score
+              <p className="opacity-90">
+                AI Health Score
               </p>
 
-              <h2 className="text-6xl font-black mt-2">
-                87
+              <h2 className="text-7xl font-black mt-2">
+                {healthScore}
               </h2>
 
-              <p className="mt-2 opacity-90">
-                Excellent Progress
+              <p className="mt-3">
+                Excellent Condition
               </p>
 
             </div>
 
-            {/* BODY METRICS */}
+            <div className="grid grid-cols-2 gap-5">
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
+              <Metric
+                title="BMI"
+                value={bmi}
+              />
 
-              <h2 className="text-2xl font-semibold mb-4">
-                Body Metrics
-              </h2>
+              <Metric
+                title="Status"
+                value={bmiStatus}
+              />
 
-              <div className="grid grid-cols-2 gap-4">
+              <Metric
+                title="Protein"
+                value={`${protein} g`}
+              />
 
-                <Metric title="BMI" value={bmi} />
-                <Metric title="Body Fat" value="18%" />
-                <Metric title="Height" value={`${height} cm`} />
-                <Metric title="Weight" value={`${weight} kg`} />
-
-              </div>
+              <Metric
+                title="Water"
+                value={`${water} L`}
+              />
 
             </div>
 
-            {/* CALORIES */}
+                        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
-
-              <h2 className="text-2xl font-semibold mb-4">
-                Calories
+              <h2 className="text-2xl font-bold mb-6">
+                Daily Nutrition
               </h2>
 
               <div className="grid md:grid-cols-3 gap-4">
 
                 <Metric
                   title="Maintenance"
-                  value={`${maintenanceCalories}`}
+                  value={`${maintenanceCalories} kcal`}
                 />
 
                 <Metric
                   title="Fat Loss"
-                  value={`${fatLossCalories}`}
+                  value={`${fatLossCalories} kcal`}
                 />
 
                 <Metric
                   title="Muscle Gain"
-                  value={`${muscleGainCalories}`}
+                  value={`${muscleGainCalories} kcal`}
                 />
 
               </div>
 
             </div>
 
-            {/* PROTEIN */}
-
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
 
-              <h2 className="text-2xl font-semibold mb-4">
-                Protein Targets
+              <h2 className="text-2xl font-bold mb-6">
+                Daily Macros
               </h2>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-5">
 
-                <Metric
-                  title="Minimum"
-                  value={`${proteinMin} g`}
+                <MacroBar
+                  title="Protein"
+                  value={protein}
+                  max={220}
+                  color="bg-cyan-400"
                 />
 
-                <Metric
-                  title="Optimal"
-                  value={`${proteinOptimal} g`}
+                <MacroBar
+                  title="Carbohydrates"
+                  value={carbs}
+                  max={400}
+                  color="bg-orange-400"
+                />
+
+                <MacroBar
+                  title="Healthy Fats"
+                  value={fats}
+                  max={100}
+                  color="bg-pink-400"
                 />
 
               </div>
 
             </div>
 
-            {/* RECOMMENDATIONS */}
-
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6">
 
-              <h2 className="text-2xl font-semibold mb-4">
-                AI Recommendations
-              </h2>
+              <div className="flex items-center gap-3 mb-6">
 
-              <div className="space-y-3">
+                <Target
+                  className="text-cyan-400"
+                  size={22}
+                />
 
-                <Recommendation text="💪 Focus on lean muscle gain" />
+                <h2 className="text-2xl font-bold">
+                  AI Recommendations
+                </h2>
+
+              </div>
+
+              <div className="space-y-4">
 
                 <Recommendation
-                  text={`🍗 Consume ${proteinOptimal}g protein daily`}
+                  text={`Consume around ${protein}g protein daily for optimal muscle recovery.`}
                 />
 
                 <Recommendation
-                  text="🔥 Follow progressive overload training"
+                  text="Train with progressive overload 4-5 days per week."
                 />
 
                 <Recommendation
-                  text="🚶 Walk 8,000–10,000 steps daily"
+                  text={`Drink at least ${water} litres of water daily.`}
                 />
 
                 <Recommendation
-                  text="😴 Sleep 7–8 hours every night"
+                  text="Aim for 7-8 hours of quality sleep every night."
+                />
+
+                <Recommendation
+                  text="Track your body measurements every two weeks."
                 />
 
               </div>
@@ -258,60 +344,128 @@ function BodyAnalysis() {
 
         </div>
 
-      </div>
+      </main>
+
     </div>
+
   );
 }
 
-function InputField({ label, value, setValue }) {
+function InputField({
+  icon,
+  label,
+  value,
+  setValue,
+}) {
   return (
+
     <div>
-      <label className="block mb-2 text-slate-400">
+
+      <label className="flex items-center gap-2 mb-3">
+
+        <span className="text-cyan-400">
+
+          {icon}
+
+        </span>
+
         {label}
+
       </label>
 
       <input
         type="number"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="
-          w-full
-          bg-slate-950
-          border
-          border-slate-700
-          rounded-xl
-          px-4
-          py-3
-          outline-none
-          focus:border-cyan-500
-        "
+        onChange={(e) =>
+          setValue(Number(e.target.value))
+        }
+        className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-cyan-400"
       />
+
     </div>
+
   );
 }
 
-function Metric({ title, value }) {
+function Metric({
+  title,
+  value,
+}) {
   return (
-    <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5">
+
+    <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 hover:border-cyan-500 transition">
 
       <p className="text-slate-400 text-sm">
         {title}
       </p>
 
-      <h3 className="text-xl font-semibold mt-2">
+      <h3 className="text-2xl font-bold mt-2">
         {value}
       </h3>
 
     </div>
+
   );
 }
 
-function Recommendation({ text }) {
-  return (
-    <div className="bg-slate-950 border border-slate-800 rounded-xl p-4">
-      {text}
-    </div>
+function MacroBar({
+  title,
+  value,
+  max,
+  color,
+}) {
+
+  const percent = Math.min(
+    (value / max) * 100,
+    100
   );
+
+  return (
+
+    <div>
+
+      <div className="flex justify-between mb-2">
+
+        <span>
+          {title}
+        </span>
+
+        <span className="text-cyan-400">
+          {value} g
+        </span>
+
+      </div>
+
+      <div className="h-3 rounded-full bg-slate-800">
+
+        <div
+          className={`h-3 rounded-full ${color}`}
+          style={{
+            width: `${percent}%`,
+          }}
+        />
+
+      </div>
+
+    </div>
+
+  );
+}
+
+function Recommendation({
+  text,
+}) {
+
+  return (
+
+    <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 hover:border-cyan-500 transition">
+
+      {text}
+
+    </div>
+
+  );
+
 }
 
 export default BodyAnalysis;
