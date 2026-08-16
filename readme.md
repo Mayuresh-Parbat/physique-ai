@@ -77,4 +77,5 @@ This project provides:
 ```bash
 git clone https://github.com/your-username/physique-ai.git
 cd physique-ai
-BY MAYURESH PARBAT 
+
+## Mayuresh Parbat
