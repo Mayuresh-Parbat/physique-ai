@@ -6,7 +6,7 @@
     "express": "^5.2.1",
     "framer-motion": "^12.42.0",
     "jsonwebtoken": "^9.0.3",
-    "lucide-react": "^1.21.0",
+    "lucide-react": "^1.33.0",
     "mongoose": "^9.6.3",
     "react-router-dom": "^7.17.0",
     "recharts": "^3.9.0"

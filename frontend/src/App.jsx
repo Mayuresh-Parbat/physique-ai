@@ -1,21 +1,24 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import WorkoutTracker from "./pages/WorkoutTracker";
-import DietPlan from "./pages/DietPlan";
-import WorkoutPlan from "./pages/WorkoutPlan";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Challenges from "./pages/Challenges";
 import Register from "./pages/Register";
+
 import Dashboard from "./pages/Dashboard";
 import BodyAnalysis from "./pages/BodyAnalysis";
+import WorkoutPlan from "./pages/WorkoutPlan";
+import WorkoutTracker from "./pages/WorkoutTracker";
+import DietPlan from "./pages/DietPlan";
+import Challenges from "./pages/Challenges";
 
 function App() {
   return (
     <Routes>
 
-      {/* PUBLIC PAGES */}
+      {/* HOME */}
 
       <Route
         path="/"
@@ -23,53 +26,108 @@ function App() {
           <>
             <Navbar />
             <Home />
+            <Footer />
           </>
         }
       />
-<Route
-  path="/workout-tracker"
-  element={<WorkoutTracker />}
-/>
-<Route
-  path="/workout-plan"
-  element={<WorkoutPlan />}
-/>
+
+      {/* LOGIN */}
+
       <Route
         path="/login"
         element={
           <>
             <Navbar />
             <Login />
+            <Footer />
           </>
         }
       />
-<Route
-  path="/diet-plan"
-  element={<DietPlan />}
-/>
+
+      {/* REGISTER */}
+
       <Route
         path="/register"
         element={
           <>
             <Navbar />
             <Register />
+            <Footer />
           </>
         }
       />
 
+      {/* DASHBOARD */}
 
+      <Route
+        path="/dashboard"
+        element={
+          <>
+            <Dashboard />
+            <Footer />
+          </>
+        }
+      />
 
-<Route
-  path="/challenges"
-  element={<Challenges />}
-/>
+      {/* BODY ANALYSIS */}
 
+      <Route
+        path="/body-analysis"
+        element={
+          <>
+            <BodyAnalysis />
+            <Footer />
+          </>
+        }
+      />
 
-      {/* DASHBOARD PAGES */}
+      {/* WORKOUT PLAN */}
 
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="/workout-plan"
+        element={
+          <>
+            <WorkoutPlan />
+            <Footer />
+          </>
+        }
+      />
 
-      <Route path="/body-analysis" element={<BodyAnalysis />} />
+      {/* WORKOUT TRACKER */}
+
+      <Route
+        path="/workout-tracker"
+        element={
+          <>
+            <WorkoutTracker />
+            <Footer />
+          </>
+        }
+      />
+
+      {/* DIET PLAN */}
+
+      <Route
+        path="/diet-plan"
+        element={
+          <>
+            <DietPlan />
+            <Footer />
+          </>
+        }
+      />
+
+      {/* CHALLENGES */}
+
+      <Route
+        path="/challenges"
+        element={
+          <>
+            <Challenges />
+            <Footer />
+          </>
+        }
+      />
 
     </Routes>
   );
