@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
+import Progress from "./pages/Progress";
 import Dashboard from "./pages/Dashboard";
 import BodyAnalysis from "./pages/BodyAnalysis";
 import WorkoutPlan from "./pages/WorkoutPlan";
@@ -117,6 +117,10 @@ function App() {
         }
       />
 
+\<Route
+  path="/progress"
+  element={<Progress />}
+/>
       {/* CHALLENGES */}
 
       <Route

@@ -9,6 +9,12 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        
+        
+        <Route
+  path="/progress"
+  element={<Progress />}
+/>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

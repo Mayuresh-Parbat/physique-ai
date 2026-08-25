@@ -32,6 +32,13 @@ function Navbar() {
     Diet Plan
   </Link>
 
+  <Link
+  to="/progress"
+  className="hover:text-cyan-400 transition"
+>
+  Progress
+</Link>
+
   <Link to="/workout-plan">
     Workout Plan
   </Link>

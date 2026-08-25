@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
+
 import {
   Dumbbell,
   Brain,
@@ -80,7 +81,7 @@ import {
       </p>
 
       <h2 className="text-5xl font-black mb-6">
-        Your Personal Fitness Coach
+        Your Personal Virtual Fitness Coach 
       </h2>
 
       <p className="text-gray-400 text-lg leading-8 mb-8">
@@ -113,7 +114,7 @@ import {
       </h2>
 
       <p className="text-gray-400 text-xl">
-        Thousands of users are changing their bodies using Physique AI.
+        Millions of users are changing their bodies using Physique AI.
       </p>
 
     </div>
@@ -174,8 +175,9 @@ import {
         </p>
 
         <button className="bg-cyan-400 text-black px-8 py-4 rounded-full font-bold">
-          Explore Workouts
+          Explore Workouts that Reshape Your Body
         </button>
+
 
       </div>
 
