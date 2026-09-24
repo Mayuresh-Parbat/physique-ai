@@ -203,7 +203,58 @@ export default function Footer() {
         </div>
 
       </div>
+      {/* BOTTOM BAR */}
 
+      <div className="border-t border-white/10">
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6">
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+
+            <p className="text-sm text-slate-500">
+              © 2026 PhysiqueAI. All rights reserved.
+            </p>
+
+
+            <div className="flex items-center gap-6 text-sm">
+
+              <Link
+                to="/"
+                className="text-slate-500 hover:text-white transition"
+              >
+                Privacy
+              </Link>
+
+              <Link
+                to="/"
+                className="text-slate-500 hover:text-white transition"
+              >
+                Terms
+              </Link>
+
+              <button
+                onClick={() =>
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  })
+                }
+                className="text-slate-400 hover:text-cyan-400 transition"
+              >
+                Back to top ↑
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+  );
+}
 
 
 
