@@ -186,6 +186,25 @@ export default function Footer() {
               >
                 in
               </a>
+                            {/* GitHub */}
+
+              <a
+                href="#"
+                aria-label="GitHub"
+                className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-slate-400 text-sm font-bold hover:text-cyan-400 hover:border-cyan-400/30 hover:bg-cyan-400/5 transition"
+              >
+                GH
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
 
 
 
