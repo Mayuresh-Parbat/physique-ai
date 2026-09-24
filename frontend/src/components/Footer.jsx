@@ -149,4 +149,43 @@ export default function Footer() {
             </div>
 
           </div>
+          
+          {/* CONNECT */}
+
+          <div>
+
+            <h3 className="text-sm font-semibold uppercase tracking-[3px] text-white mb-7">
+              Connect
+            </h3>
+
+            <p className="text-slate-400 text-sm leading-6 max-w-xs">
+              Follow PhysiqueAI and stay connected
+              with the latest fitness updates.
+            </p>
+
+
+            <div className="flex items-center gap-3 mt-7">
+
+              {/* Instagram */}
+
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-slate-400 text-sm font-bold hover:text-cyan-400 hover:border-cyan-400/30 hover:bg-cyan-400/5 transition"
+              >
+                IG
+              </a>
+
+
+              {/* LinkedIn */}
+
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-slate-400 text-sm font-bold hover:text-cyan-400 hover:border-cyan-400/30 hover:bg-cyan-400/5 transition"
+              >
+                in
+              </a>
+
+
 
