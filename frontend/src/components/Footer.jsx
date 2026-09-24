@@ -1,117 +1,152 @@
 import { Link } from "react-router-dom";
-import { Dumbbell, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Dumbbell,
+  ArrowUpRight,
+  Mail,
+} from "lucide-react";
 
 export default function Footer() {
+  const productLinks = [
+    { name: "Body Analysis", path: "/body-analysis" },
+    { name: "Workout Plan", path: "/workout-plan" },
+    { name: "Diet Plan", path: "/diet-plan" },
+    { name: "Progress", path: "/progress" },
+  ];
+
+  const platformLinks = [
+    { name: "Workout Tracker", path: "/workout-tracker" },
+    { name: "Challenges", path: "/challenges" },
+    { name: "Dashboard", path: "/dashboard" },
+  ];
+
   return (
-    <footer className="bg-[#050816] border-t border-slate-800 text-gray-300">
+    <footer className="bg-[#030712] text-white border-t border-white/10">
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      {/* MAIN FOOTER */}
 
-        <div className="grid md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24">
 
-          {/* Logo */}
+        <div className="grid lg:grid-cols-[1.6fr_1fr_1fr_1fr] gap-14 lg:gap-20">
 
-          <div>
+          {/* BRAND */}
 
-            <div className="flex items-center gap-2 mb-5">
+          <div className="max-w-sm">
 
-              <Dumbbell className="text-cyan-400" size={30} />
+            <Link
+              to="/"
+              className="inline-flex items-center gap-3 group"
+            >
 
-              <h2 className="text-3xl font-black text-white">
-                Physique<span className="text-cyan-400">AI</span>
-              </h2>
+              <div className="w-11 h-11 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 transition">
 
-            </div>
+                <Dumbbell
+                  size={22}
+                  className="text-cyan-400"
+                />
 
-            <p className="text-gray-400 leading-7">
-              AI-powered fitness platform helping you achieve your dream physique with smart workouts, nutrition and progress tracking.
+              </div>
+
+              <span className="text-3xl font-black tracking-tight">
+                Physique
+                <span className="text-cyan-400">
+                  AI
+                </span>
+              </span>
+
+            </Link>
+
+
+            <p className="mt-7 text-slate-400 leading-7 text-[15px]">
+              Your intelligent fitness companion for
+              personalized workouts, nutrition,
+              body insights and everyday progress.
             </p>
 
-          </div>
 
-          {/* Quick Links */}
+            <a
+              href="mailto:support@physiqueai.com"
+              className="inline-flex items-center gap-3 mt-7 text-sm text-slate-300 hover:text-cyan-400 transition"
+            >
 
-          <div>
+              <Mail size={17} />
 
-            <h3 className="text-white text-xl font-bold mb-5">
-              Quick Links
-            </h3>
+              <span>
+                support@physiqueai.com
+              </span>
 
-            <ul className="space-y-3">
-
-              <li><Link to="/" className="hover:text-cyan-400">Home</Link></li>
-
-              <li><Link to="/body-analysis" className="hover:text-cyan-400">Body Analysis</Link></li>
-
-              <li><Link to="/workout-plan" className="hover:text-cyan-400">Workout Plan</Link></li>
-
-              <li><Link to="/diet-plan" className="hover:text-cyan-400">Diet Plan</Link></li>
-
-            </ul>
+            </a>
 
           </div>
 
-          {/* Features */}
+
+          {/* PRODUCT */}
 
           <div>
 
-            <h3 className="text-white text-xl font-bold mb-5">
-              Features
-            </h3>
-
-            <ul className="space-y-3">
-
-              <li>AI Workout Generator</li>
-
-              <li>Body Analysis</li>
-
-              <li>Nutrition Planning</li>
-
-              <li>Progress Tracking</li>
-
-            </ul>
-
-          </div>
-
-          {/* Contact */}
-
-          <div>
-
-            <h3 className="text-white text-xl font-bold mb-5">
-              Contact
+            <h3 className="text-sm font-semibold uppercase tracking-[3px] text-white mb-7">
+              Product
             </h3>
 
             <div className="space-y-4">
 
-              <div className="flex gap-3">
-                <Mail className="text-cyan-400" size={18} />
-                support@physiqueai.com
-              </div>
+              {productLinks.map((link) => (
 
-              <div className="flex gap-3">
-                <Phone className="text-cyan-400" size={18} />
-                +91 98765 43210
-              </div>
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="group flex items-center gap-1 text-slate-400 hover:text-white transition"
+                >
 
-              <div className="flex gap-3">
-                <MapPin className="text-cyan-400" size={18} />
-                pune, India
-              </div>
+                  <span>
+                    {link.name}
+                  </span>
+
+                  <ArrowUpRight
+                    size={14}
+                    className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-400 transition"
+                  />
+
+                </Link>
+
+              ))}
 
             </div>
 
           </div>
 
-        </div>
 
-      </div>
+          {/* PLATFORM */}
 
-      <div className="border-t border-slate-800 py-6 text-center text-gray-500">
+          <div>
 
-        © {new Date().getFullYear()} PhysiqueAI. All Rights Reserved.
+            <h3 className="text-sm font-semibold uppercase tracking-[3px] text-white mb-7">
+              Platform
+            </h3>
 
-      </div>
+            <div className="space-y-4">
 
-    </footer>
-  );
-}
+              {platformLinks.map((link) => (
+
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="group flex items-center gap-1 text-slate-400 hover:text-white transition"
+                >
+
+                  <span>
+                    {link.name}
+                  </span>
+
+                  <ArrowUpRight
+                    size={14}
+                    className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-cyan-400 transition"
+                  />
+
+                </Link>
+
+              ))}
+
+            </div>
+
+          </div>
+
